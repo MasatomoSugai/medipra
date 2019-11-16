@@ -1,0 +1,19 @@
+.default_conatiner
+  .header
+    薬価検索サイトmedipra
+
+  .body
+    =render 'search_form'
+
+.results
+  - @products.each do |product|
+    .results__result
+      .results__result-name
+        = product.name
+      .results__result-price
+        = "#{product.price} 円"
+      .results__result_generic
+        -if product.generic == 1
+          後発品
+        - else
+          先発品
