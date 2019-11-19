@@ -11,7 +11,7 @@
       .results__result-name
         = product.name
       .results__result-price
-        = "#{product.price} 円"
+        = "#{(product.price).to_f} 円"
       .results__result_generic
         -if product.generic == 1
           後発品
