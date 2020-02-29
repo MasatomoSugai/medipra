@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
 
   def search
     @q = Product.search(search_params)
-    @products = @q.result(distinct: true)
+    @products = @q.result(distinct: true).page(params[:page]).per(10)
     # binding.pry
   end
 
