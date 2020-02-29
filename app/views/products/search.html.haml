@@ -1,6 +1,5 @@
-.default_conatiner
-  .header
-    薬価検索サイトmedipra
+.default_container
+  =render 'top'
 
   .body
     =render 'search_form'
@@ -17,3 +16,5 @@
           後発品
         - else
           先発品
+  = paginate(@products)
+
