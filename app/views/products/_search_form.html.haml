@@ -2,4 +2,17 @@
   = search_form_for(@q, url: search_path) do |f|
     = f.label :name, "keyword", placeholder:"商品名で検索できます"
     = f.search_field :name_cont
+
+    -# = f.label :generic
+    -# = f.radio_button :generic_or_original_eq, '', {:checked => true}
+      
+    -# = f.check_box :original_eq, '先発品', {multiple: true}, nil
+    -# = f.label :generic, "先発品"
+
+    -# = f.check_box :generic_eq, {multiple: true}, '後発品'
+    -#この並び順じゃないと動かない
+    -# = f.label :generic, "後発品"
+    
     = f.submit "検索"
+  %p
+    商品名で検索できます。キーワードを含む全ての商品が表示されます。
