@@ -2,5 +2,35 @@
   .header {
     height: 100px;
 
+    .body {
+      .search_form {
+        height: 70px;
+        border: 1px solid red;
+      }
+      .results {
+        &__keyword {
+          height: 30px;
+          border: 1px solid blue;
+
+        }
+        &__total-count {
+          height: 30px;
+
+        }
+        &__table {
+          margin: 20px 30px;
+          border: 1px solid pink;
+          &-title {
+            height: 30px;
+            border: 1px solid green;
+            %th {
+              font-weight: bold;
+
+
+            }
+          }
+        }
+      }
+    }
   }
 }
