@@ -1,5 +1,14 @@
 .header
   %h1.header_title
-    = link_to "薬価検索サイトmedipra", root_path
+    = link_to "薬価検索サイトmedipra", root_path, class:"head-link"
   %p.header_text
     お薬の値段（薬価）を調べることができます（更新：2020/02/29）
+
+  .header_menu
+    .header_menu__container
+      %ul.header_menu__container__menu-list
+        %li ホーム
+        %li medipraについて
+        %li 使い方
+        %li 免責事項
+        %li お問い合わせ
