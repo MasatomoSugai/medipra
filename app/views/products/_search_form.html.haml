@@ -1,4 +1,4 @@
-.search-form
+.search_form
   = search_form_for(@q, url: search_path) do |f|
     = f.label :name, "keyword", placeholder:"商品名で検索できます"
     = f.search_field :name_cont
