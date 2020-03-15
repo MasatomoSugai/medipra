@@ -1,33 +1,41 @@
 
-.default_container
-  =render 'top'
+.wrapper
+  .default-container
+    =render 'top'
 
-  .body
-    =render 'search_form'
+    .body
+      =render 'search_form'
 
       .results
         .results__keyword
           検索ワード  "#{params[:q][:name_cont]}"
         .results__total-count
           検索結果     #{@products.total_count}件
-        %table.results__table
-          %tr.resutls__table-title
-            %th 製品名
-            %th 薬価
-            %th 規格
-            -# %th 薬価計算（後で実装する）
+        - if @products.empty?
+          .results__no-match
+            該当する薬品はありません。
+            .results__no-match__link
+              = link_to "ホームに戻る", root_path
+        - else
+          .results__table
+            %table
+              %tr.results__table-title
+                %th.results__table-title__header 製品名
+                %th.results__table-title__header 薬価
+                %th.results__table-title__header 規格
+                -# %th 薬価計算（後で実装する）
 
-          - @products.each do |product|
-            %tr.results__table-data
-              %td
-                - if product.generic == "後発品"
-                  後発
-                = product.name
-              %td
-                = "#{(product.price).to_f}"
-              %td 
-                = product.standard
-              -# %td 3 錠 32円(税込み)（後で実装する）
+              - @products.each do |product|
+                %tr.results__table-row
+                  %td.results__table-row__data
+                    - if product.generic == "後発品"
+                      %span.generic 後発
+                    = product.name
+                  %td.results__table-row__data.price
+                    = "#{(product.price).to_f}"
+                  %td.results__table-row__data
+                    = product.standard
+                  -# %td 3 錠 32円(税込み)（後で実装する）
 
       = paginate(@products)
     =render 'footer'
