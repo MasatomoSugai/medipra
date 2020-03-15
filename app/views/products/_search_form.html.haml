@@ -1,6 +1,6 @@
-.search-form
+.search_form
   = search_form_for(@q, url: search_path) do |f|
-    = f.label :name, "keyword", placeholder:"商品名で検索できます"
+    = f.label :name, "keyword", placeholder:"商品名で検索できます", class:"search_form_keyword"
     = f.search_field :name_cont
 
     -# = f.label :generic
