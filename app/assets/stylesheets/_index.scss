@@ -42,6 +42,31 @@
             border: 1px solid green;
             %th {
               font-weight: bold;
+          margin: 0 auto 20px;
+          &__container {
+            width: 90%;
+            margin: 0 auto;
+            &-title {
+              height: 30px;
+              &__name {
+                width: 50%;
+                font-weight: bold;
+                border: 1px solid red;
+                text-align: center;
+              }
+              &__price {
+                width: 15%;
+                font-weight: bold;
+                border: 1px solid red;
+                text-align: center;
+              }
+              &__standard {
+                width: 35%;
+                font-weight: bold;
+                border: 1px solid red;
+                text-align: center;
+              }
+            }
 
 
             }

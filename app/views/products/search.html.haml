@@ -18,11 +18,11 @@
               = link_to "ホームに戻る", root_path
         - else
           .results__table
-            %table
-              %tr.results__table-title
-                %th.results__table-title__header 製品名
-                %th.results__table-title__header 薬価
-                %th.results__table-title__header 規格
+            %table.results__table__container
+              %tr.results__table__container-title
+                %th.results__table__container-title__name 製品名
+                %th.results__table__container-title__price 薬価
+                %th.results__table__container-title__standard 規格
                 -# %th 薬価計算（後で実装する）
 
               - @products.each do |product|
