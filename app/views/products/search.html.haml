@@ -31,6 +31,7 @@
                     - if product.generic == "後発品"
                       %span.generic 後発
                     = product.name
+                    %span.ingredients【般】#{product.ingredients}
                   %td.results__table-row__price
                     = "#{(product.price).to_f}"
                   %td.results__table-row__standard
