@@ -8,7 +8,7 @@
 
       .results
         .results__keyword
-          検索ワード  "#{params[:q][:name_cont]}"
+          検索ワード  "#{params[:q][:name_or_ingredients_cont]}"
         .results__total-count
           検索結果     #{@products.total_count}件
         - if @products.empty?
