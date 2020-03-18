@@ -21,6 +21,11 @@ class ProductsController < ApplicationController
     # binding.pry
   end
 
+  def samedrugsearch
+    @q = Product.ransack(params[:q])
+    @products = Product.where("YJ_code = ?", params[:YJ_code]).where("standard = ?", params[:standard])
+  end
+
   
 
   private
