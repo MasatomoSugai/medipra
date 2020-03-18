@@ -32,6 +32,8 @@
                       %span.generic 後発
                     = product.name
                     %span.ingredients【般】#{product.ingredients}
+                    %span.samedrug_search
+                      = link_to "同種薬検索", samedrugsearch_path(name: product.name, YJ_code: product.YJ_code, standard: product.standard),class:"samedrug_search__link"
                   %td.results__table-row__price
                     = "#{(product.price).to_f}"
                   %td.results__table-row__standard
