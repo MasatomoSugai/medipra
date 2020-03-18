@@ -8,9 +8,9 @@
 
       .results
         .results__keyword
-          検索ワード  "#{params[:q][:name_or_ingredients_cont]}"
+          #{params[:name]}の同一規格、同一成分の薬一覧
         .results__total-count
-          検索結果     #{@products.total_count}件
+          検索結果     #{@products.length}件
         - if @products.empty?
           .results__no-match
             該当する薬品はありません。
@@ -34,12 +34,17 @@
                     %span.ingredients【般】#{product.ingredients}
                     %span.samedrug_search
                       = link_to "同種薬検索", samedrugsearch_path(name: product.name, YJ_code: product.YJ_code, standard: product.standard),class:"samedrug_search__link"
+                      -# = search_form_for()
+                      -#   = f.label :samedrug, 
+                      -#   = f.search_field 
+                      -#   = f.submit "同種薬検索"
+
                   %td.results__table-row__price
                     = "#{(product.price).to_f}"
                   %td.results__table-row__standard
                     = product.standard
                   -# %td 3 錠 32円(税込み)（後で実装する）
 
-      = paginate(@products)
+      -# = paginate(@products)エラーになってしまうのでコメントアウト
     =render 'footer'
 
