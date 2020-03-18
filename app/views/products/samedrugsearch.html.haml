@@ -1,0 +1,50 @@
+
+.wrapper
+  .default-container
+    =render 'top'
+
+    .body
+      =render 'search_form'
+
+      .results
+        .results__keyword
+          #{params[:name]}の同一規格、同一成分の薬一覧
+        .results__total-count
+          検索結果     #{@products.length}件
+        - if @products.empty?
+          .results__no-match
+            該当する薬品はありません。
+            .results__no-match__link
+              = link_to "ホームに戻る", root_path
+        - else
+          .results__table
+            %table.results__table__container
+              %tr.results__table__container-title
+                %th.results__table__container-title__name 製品名
+                %th.results__table__container-title__price 薬価
+                %th.results__table__container-title__standard 規格
+                -# %th 薬価計算（後で実装する）
+
+              - @products.each do |product|
+                %tr.results__table-row
+                  %td.results__table-row__name
+                    - if product.generic == "後発品"
+                      %span.generic 後発
+                    = product.name
+                    %span.ingredients【般】#{product.ingredients}
+                    %span.samedrug_search
+                      = link_to "同種薬検索", samedrugsearch_path(name: product.name, YJ_code: product.YJ_code, standard: product.standard),class:"samedrug_search__link"
+                      -# = search_form_for()
+                      -#   = f.label :samedrug, 
+                      -#   = f.search_field 
+                      -#   = f.submit "同種薬検索"
+
+                  %td.results__table-row__price
+                    = "#{(product.price).to_f}"
+                  %td.results__table-row__standard
+                    = product.standard
+                  -# %td 3 錠 32円(税込み)（後で実装する）
+
+      -# = paginate(@products)エラーになってしまうのでコメントアウト
+    =render 'footer'
+
