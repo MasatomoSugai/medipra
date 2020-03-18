@@ -12,10 +12,10 @@ class ProductsController < ApplicationController
     if params[:q] != nil
       # params[:q]['name_or_ingredients_cont'] = params[:q]['name_or_ingredients_cont'].split(/[\p{blank}\s]+/)
       # @q = Product.ransack(params[:q])Qiitaでは必要なコードだったけど、エラーが解決できず。
-      @q = Product.search(params[:q])
+      @q = Product.ransack(params[:q])
       @products = @q.result(distinct: true).page(params[:page])
     else
-      @q = Product.search(params[:q])
+      @q = Product.ransack(params[:q])
       @products = @q.result(distinct: true).page(params[:page]) #検索の結果を受け取る。
     end
     # binding.pry
