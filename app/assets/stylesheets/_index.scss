@@ -113,6 +113,22 @@
               .ingredients {
                 font-size: 12px;
               }
+              .samedrug_search {
+                display: inline-block;
+                width: 80px;
+                height: 20px;
+                text-align: center;
+                vertical-align: middle;
+                background-color:#7fd9d2;
+                border-radius: 5px;
+                line-height:20px;
+
+                &__link {
+                  font-size: 12px;
+                  text-decoration: none;
+                  color: #ffffff;
+                }
+              }
             }
             &__price {
               min-width: 40px;
