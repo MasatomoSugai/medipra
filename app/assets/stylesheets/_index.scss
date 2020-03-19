@@ -119,6 +119,7 @@
             &__name {
               min-width: 90px;
               padding: 5px 5px;
+              font-weight: bold;
               .generic {
                 font-weight: bold;
                 color: blue;
@@ -126,6 +127,7 @@
               }
               .ingredients {
                 font-size: 12px;
+                font-weight: normal;
               }
               .samedrug_search {
                 display: inline-block;
