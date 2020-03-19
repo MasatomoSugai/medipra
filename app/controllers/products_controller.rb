@@ -18,7 +18,6 @@ class ProductsController < ApplicationController
       @q = Product.ransack(params[:q])
       @products = @q.result(distinct: true).page(params[:page]) #検索の結果を受け取る。
     end
-    # binding.pry
   end
 
   def samedrugsearch
@@ -26,7 +25,11 @@ class ProductsController < ApplicationController
     @products = Product.where("YJ_code = ?", params[:YJ_code]).where("standard = ?", params[:standard])
   end
 
-  
+  def about_medipra
+  end
+
+  def contact
+  end
 
   private
   def search_params

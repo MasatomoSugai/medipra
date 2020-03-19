@@ -7,8 +7,11 @@
   .header_menu
     %nav.header_menu__container
       %ul.header_menu__container__menu-list
-        %li ホーム
-        %li medipraについて
-        %li 使い方
-        %li 免責事項
-        %li お問い合わせ
+        %li 
+          =link_to "ホーム", root_path, class: "header_menu__container__menu-list_home"
+        %li 
+          =link_to "medipraについて", about_medipra_path, class: "header_menu__container__menu-list_about"
+        %li 
+          =link_to "お問い合わせ", contact_path, class: "header_menu__container__menu-list_contact"
+
+          
