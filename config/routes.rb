@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 root to: "products#index"
 get 'search', to: 'products#search'
 get 'samedrugsearch', to: 'products#samedrugsearch'
-
+get 'about_medipra', to: 'products#about_medipra'
+get 'contact', to: 'products#contact'
 
 end
