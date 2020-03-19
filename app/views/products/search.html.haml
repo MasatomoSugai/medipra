@@ -21,7 +21,7 @@
             %table.results__table__container
               %tr.results__table__container-title
                 %th.results__table__container-title__name 製品名
-                %th.results__table__container-title__price 薬価
+                %th.results__table__container-title__price 薬価(2020.4.1~)
                 %th.results__table__container-title__standard 規格
                 -# %th 薬価計算（後で実装する）
 
@@ -35,11 +35,11 @@
                     %span.samedrug_search
                       = link_to "同種薬検索", samedrugsearch_path(name: product.name, YJ_code: product.YJ_code, standard: product.standard),class:"samedrug_search__link"
                   %td.results__table-row__price
-                    = "#{(product.price).to_f}"
+                    = "#{(product.price).to_s(:delimited)}"
+
                   %td.results__table-row__standard
                     = product.standard
                   -# %td 3 錠 32円(税込み)（後で実装する）
 
       = paginate(@products)
     =render 'footer'
-
