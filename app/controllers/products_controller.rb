@@ -13,16 +13,16 @@ class ProductsController < ApplicationController
       # params[:q]['name_or_ingredients_cont'] = params[:q]['name_or_ingredients_cont'].split(/[\p{blank}\s]+/)
       # @q = Product.ransack(params[:q])Qiitaでは必要なコードだったけど、エラーが解決できず。
       @q = Product.ransack(params[:q])
-      @products = @q.result(distinct: true).page(params[:page])
+      @products = @q.result(distinct: true).page(params[:page]).order(price: 'DESC')
     else
       @q = Product.ransack(params[:q])
-      @products = @q.result(distinct: true).page(params[:page]) #検索の結果を受け取る。
+      @products = @q.result(distinct: true).page(params[:page]).order(price: 'DESC') #検索の結果を受け取る。
     end
   end
 
   def samedrugsearch
     @q = Product.ransack(params[:q])
-    @products = Product.where("YJ_code = ?", params[:YJ_code]).where("standard = ?", params[:standard])
+    @products = Product.where("YJ_code = ?", params[:YJ_code]).where("standard = ?", params[:standard]).order(price: 'DESC')
   end
 
   def about_medipra
