@@ -30,7 +30,7 @@
                   %td.results__table-row__name
                     - if product.generic == 1
                       %span.generic 後発
-                    - elsif product.generic == "AG後発品"
+                    - elsif product.generic == 9
                       %span.AGgeneric AG
                     = product.standard_name
                     %span.samedrug_search
