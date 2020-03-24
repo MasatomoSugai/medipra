@@ -36,7 +36,7 @@
       &_menu {
         background-color: #009bc6;
         &__container {
-          width: 90%;
+          width: 70%;
           margin-left: 30px;
           &__menu-list {
             display: grid;
@@ -158,6 +158,7 @@
             &__standard {
               min-width: 60px;
               padding: 5px 5px;
+              text-align: center;
             }
           }
         }
