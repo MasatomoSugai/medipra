@@ -44,7 +44,7 @@ https://shinryohoshu.mhlw.go.jp/shinryohoshu/downloadMenu/
 | マスター種別 master_type   |   string |       |Y:固定|
 | 医薬品コード（医薬品名、規格名）pharmaceutical_code |   integer |    ||
 | 漢字有効桁数 kanji_significant_digits    |    integer |      ||
-|漢字名称  name  |   string |    index  ||
+|漢字名称  kanji_name  |   string |    index  ||
 | カナ有効桁数 kana_significant_digits |   integer |     | |
 | カナ名称 kana_name | string  |   ||
 | 単位コード unit_code | integer  |   ||
