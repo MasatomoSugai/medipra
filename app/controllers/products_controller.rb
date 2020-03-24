@@ -22,7 +22,8 @@ class ProductsController < ApplicationController
 
   def samedrugsearch
     @q = Product.ransack(params[:q])
-    @products = Product.where("YJ_code = ?", params[:YJ_code]).where("standard = ?", params[:standard]).order(price: 'DESC')
+    @search_code = params[:standard_code].split(/\A(.{1,8})/,2)[1]
+    @products =  Product.where("standard_code LIKE ?", "#{@search_code}____").order(price: 'DESC')
   end
 
   def about_medipra

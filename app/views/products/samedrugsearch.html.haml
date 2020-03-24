@@ -8,7 +8,7 @@
 
       .results
         .results__keyword
-          #{params[:name]}の同一規格、同一成分の薬一覧
+          #{params[:standard_name]}の同一規格、同一成分の薬一覧
         .results__total-count
           検索結果     #{@products.length}件
         - if @products.empty?
@@ -28,25 +28,20 @@
               - @products.each do |product|
                 %tr.results__table-row
                   %td.results__table-row__name
-                    - if product.generic == "後発品"
+                    - if product.generic == 1
                       %span.generic 後発
                     - elsif product.generic == "AG後発品"
                       %span.AGgeneric AG
-                    = product.name
-                    %span.ingredients【般】#{product.ingredients}
+                    = product.standard_name
                     %span.samedrug_search
-                      = link_to "同種薬検索", samedrugsearch_path(name: product.name, YJ_code: product.YJ_code, standard: product.standard),class:"samedrug_search__link"
-                      -# = search_form_for()
-                      -#   = f.label :samedrug, 
-                      -#   = f.search_field 
-                      -#   = f.submit "同種薬検索"
+                      = link_to "同種薬検索", samedrugsearch_path(standard_code: product.standard_code, standard_name: product.standard_name),class:"samedrug_search__link"
 
                   %td.results__table-row__price
                     = "#{(product.price).to_f}"
                   %td.results__table-row__standard
-                    = product.standard
+                    = product.unit_name
                   -# %td 3 錠 32円(税込み)（後で実装する）
 
-      -# = paginate(@products)エラーになってしまうのでコメントアウト
+      -# = paginate(@products)
     =render 'footer'
 
