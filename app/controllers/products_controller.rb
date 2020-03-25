@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
     if params[:q] != nil
       # params[:q]['name_or_ingredients_cont'] = params[:q]['name_or_ingredients_cont'].split(/[\p{blank}\s]+/)
       # @q = Product.ransack(params[:q])Qiitaでは必要なコードだったけど、エラーが解決できず。
+      params[:q]['standard_name_cont_all'] = params[:q]['standard_name_cont_all'].split(/[\p{blank}\s]+/)
       @q = Product.ransack(params[:q])
       @products = @q.result(distinct: true).page(params[:page]).order(price: 'DESC')
     else
