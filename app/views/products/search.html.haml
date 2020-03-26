@@ -10,7 +10,7 @@
         .results__keyword
           検索ワード ： #{params[:q][:standard_name_cont_all][0]} 
           -if params[:q][:standard_name_cont_all][1].present? 
-            、#{params[:q][:standard_name_cont_all][1]}
+            、#{params[:q][:standard_name_cont_all][1]}、#{params[:q][:standard_name_cont_all][2]}
         .results__total-count
           検索結果     #{@products.total_count}件
         - if @products.empty?
