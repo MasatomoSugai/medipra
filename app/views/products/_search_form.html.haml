@@ -2,8 +2,7 @@
   = search_form_for(@q, url: search_path) do |f|
     = f.label :name, "keyword", placeholder:"商品名、一般名で検索できます", class:"search_form_keyword"
     = f.search_field :standard_name_cont_all, required: true
-
-
+    -# = f.text_field ransack_param_translate_normal_or_key(:standard_name),value: ransack_params_array_to_s(ransack_param_translate_normal_or_key(:standard_name))
     -# = f.label :generic
     -# = f.radio_button :generic_or_original_eq, '', {:checked => true}
       
@@ -15,5 +14,6 @@
     -# = f.label :generic, "後発品"
     
     = f.submit "検索"
-  %p
-    商品名、一般名で検索できます。キーワードを含む全ての商品が表示されます。注意）全ての後発品が表示されるわけではありません。
+    %p
+      全角で入力してください。製品名（商品名）で検索できます。キーワードを含む全ての商品が表示されます。
+    %p スペースを入れるとAND検索が可能です。例）「カロナ ２００」「レバミ オーツカ」など
