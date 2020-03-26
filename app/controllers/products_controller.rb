@@ -5,13 +5,8 @@ class ProductsController < ApplicationController
   end
 
   def search
-    # @q = Product.search(search_params)
-    # @products = @q.result(distinct: true).page(params[:page])
-    # binding.pry
-
     if params[:q] != nil
-      # params[:q]['name_or_ingredients_cont'] = params[:q]['name_or_ingredients_cont'].split(/[\p{blank}\s]+/)
-      # @q = Product.ransack(params[:q])Qiitaでは必要なコードだったけど、エラーが解決できず。
+      params[:q]['standard_name_cont_all'] = params[:q]['standard_name_cont_all'].split(/[\p{blank}\s]+/)
       @q = Product.ransack(params[:q])
       @products = @q.result(distinct: true).page(params[:page]).order(price: 'DESC')
     else
@@ -23,7 +18,7 @@ class ProductsController < ApplicationController
   def samedrugsearch
     @q = Product.ransack(params[:q])
     @search_code = params[:standard_code].split(/\A(.{1,8})/,2)[1]
-    @products =  Product.where("standard_code LIKE ?", "#{@search_code}____").order(price: 'DESC')
+    @products =  Product.where("standard_code LIKE ?", "#{@search_code}____").order(price: 'DESC').page(params[:page])
   end
 
   def about_medipra
@@ -34,8 +29,7 @@ class ProductsController < ApplicationController
 
   private
   def search_params
-    params.require(:q).permit!
-    # ！にすることで検索ワードがなんでもOKなようにしている。あとで制限かける必要あり
+    params.require(:q).permit(:standard_name_cont)
   end
 
 end
