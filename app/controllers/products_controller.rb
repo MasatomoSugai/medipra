@@ -5,11 +5,19 @@ class ProductsController < ApplicationController
   end
 
   def search
+    # params[:q]['standard_name_cont_all'] = params[:q]['standard_name_cont_all'].split(/[\p{blank}\s]+/)
+
+    # params[:q]['standard_name_cont_all'] = params[:q]['standard_name_cont_all'].split(/[\p{blank}\s]+/)
+    # @q = Product.ransack(params[:q])
+    # @products = @q.result(distinct: true).page(params[:page]).order(price: 'DESC')
+      
     if params[:q] != nil
       params[:q]['standard_name_cont_all'] = params[:q]['standard_name_cont_all'].split(/[\p{blank}\s]+/)
       @q = Product.ransack(params[:q])
       @products = @q.result(distinct: true).page(params[:page]).order(price: 'DESC')
     else
+      params[:q]['standard_name_cont_all'] = params[:q]['standard_name_cont_all'].split(/[\p{blank}\s]+/)
+
       @q = Product.ransack(params[:q])
       @products = @q.result(distinct: true).page(params[:page]).order(price: 'DESC') #検索の結果を受け取る。
     end
