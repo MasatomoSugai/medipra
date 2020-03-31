@@ -14,12 +14,16 @@ class ProductsController < ApplicationController
     if params[:q] != nil
       params[:q]['standard_name_cont_all'] = params[:q]['standard_name_cont_all'].split(/[\p{blank}\s]+/)
       @q = Product.ransack(params[:q])
-      @products = @q.result(distinct: true).page(params[:page]).order(price: 'DESC')
+      # @products = @q.result(distinct: true).page(params[:page]).order(price: 'DESC')
+      @products = @q.result(distinct: true).order(price: 'DESC')
+
     else
       params[:q]['standard_name_cont_all'] = params[:q]['standard_name_cont_all'].split(/[\p{blank}\s]+/)
 
       @q = Product.ransack(params[:q])
-      @products = @q.result(distinct: true).page(params[:page]).order(price: 'DESC') #検索の結果を受け取る。
+      # @products = @q.result(distinct: true).page(params[:page]).order(price: 'DESC') #検索の結果を受け取る。
+      @products = @q.result(distinct: true).order(price: 'DESC') #検索の結果を受け取る。
+
     end
   end
 
