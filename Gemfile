@@ -32,6 +32,11 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-stack_explorer'
+  gem 'pry-byebug'
+  gem 'hirb'   # モデルの出力結果を表形式で表示するGem
+  gem 'hirb-unicode' # 日本語などマルチバイト文字の出力時の出力結果のずれに対応
 end
 
 group :development do
