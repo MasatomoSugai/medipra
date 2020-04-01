@@ -30,3 +30,5 @@
 yarn-debug.log*
 .yarn-integrity
 /.env
+/public/sitemap.xml.gz
+
