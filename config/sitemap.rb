@@ -9,7 +9,7 @@ SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new(
 )
 
 SitemapGenerator::Sitemap.create do
-  add root_path, priority:1.0, lastmod: current_time, changefreq:'daily'
+  add root_path, priority:1.0, changefreq:'daily'
   # Put links creation logic here.
   #
   # The root path '/' and sitemap index file are added automatically for you.
