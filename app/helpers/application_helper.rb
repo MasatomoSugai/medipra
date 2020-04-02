@@ -7,7 +7,7 @@ module ApplicationHelper
       separator: '|',
       charset: 'utf-8',
       description: 'おくすりの値段（薬価）が検索できるサービスです。AG（オーソライズドジェネリック）や同種薬の検索もできます。',
-      keywords: '薬価,おくすり,オーソライズド,ジェネリック',
+      keywords: '薬価,おくすり,値段,オーソライズド,ジェネリック',
       canonical: request.original_url,
       og: defalut_og,
       twitter: default_twitter_card
