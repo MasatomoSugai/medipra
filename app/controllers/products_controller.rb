@@ -39,6 +39,9 @@ class ProductsController < ApplicationController
   def contact
   end
 
+  def privacypolicy
+  end
+
   private
   def search_params
     params.require(:q).permit(:standard_name_cont)
