@@ -41,7 +41,7 @@
           &__menu-list {
             display: grid;
             // メニューの数を増やしたら一つ増やす
-            grid-template-columns: 0.5fr 0.5fr 0.5fr ;
+            grid-template-columns: 0.4fr 0.5fr 0.7fr 0.5fr;
             text-align: center;
             font-size: 20px;
             height: 40px;
@@ -50,6 +50,9 @@
               @include menu-list
             }
             &_about {
+              @include menu-list
+            }
+            &_privacy {
               @include menu-list
             }
             &_contact {
