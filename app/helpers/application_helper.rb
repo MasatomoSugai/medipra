@@ -27,7 +27,7 @@ module ApplicationHelper
   
   def default_twitter_card
     {
-      card: 'summary_large_image', # または summary
+      card: 'summary', # または summary_large_image
       site: '@pharma_tech3'            # twitter ID
     }
   end
