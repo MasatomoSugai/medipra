@@ -4,9 +4,8 @@
     =render 'top'
 
     .body
-      .breadcumbs
-        - breadcrumb :samedrugsearch
-        =render 'breadcrumb'
+      - breadcrumb :samedrugsearch
+      =render 'breadcrumb'
       =render 'search_form'
 
       .results
