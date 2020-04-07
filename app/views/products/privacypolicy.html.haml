@@ -4,6 +4,9 @@
     =render 'top'
 
     .body
+      .breadcumbs
+        - breadcrumb :privacy_policy
+        = render 'breadcrumb'
       .message__container
         %h2.message__container__h2
           当サイトが掲載する広告について
