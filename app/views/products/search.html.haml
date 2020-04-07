@@ -4,6 +4,8 @@
     =render 'top'
 
     .body
+      - breadcrumb :search
+      = render 'breadcrumb'
       =render 'search_form'
 
       .results

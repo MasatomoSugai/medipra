@@ -2,5 +2,7 @@
   .default-container
     =render 'top'
     .body
+      - breadcrumb :root
+      = render 'breadcrumb'
       =render 'search_form'
     =render 'footer'
