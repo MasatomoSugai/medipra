@@ -29,9 +29,9 @@
                 %th.results__table__container-title__name 製品名
                 %th.results__table__container-title__price 薬価(2020.4.1~)
                 %th.results__table__container-title__standard 規格
-                -# %th 薬価計算（後で実装する）
+                %th.results__table__container-title__calc 薬価計算
 
-              - @products.each do |product|
+              - @products.each.with_index(1) do |product, index|
                 %tr.results__table-row
                   %td.results__table-row__name
                     - if product.generic == 1
@@ -39,15 +39,23 @@
                     - elsif product.generic == 9
                       %span.AGgeneric AG
                     = product.standard_name
+                    
                     %span.samedrug_search
                       = link_to "同種薬検索", samedrugsearch_path(standard_code: product.standard_code, standard_name: product.standard_name),class:"samedrug_search__link"
                   %td.results__table-row__price
-                    = "#{(product.price).to_s(:delimited)}"
+                    = (product.price).to_s(:delimited)
 
                   %td.results__table-row__standard
                     = product.unit_name
-                  -# %td 3 錠 32円(税込み)（後で実装する）
-
+                  %td{class:"results__table-row__calc_#{++index}"}
+                    %input{id:"calc_input_#{++index}",value: "1",maxlength:7, size:6}
+                    = product.unit_name
+                    = (product.price).to_s(:delimited)
+                    円(税込み)
+                    :javascript
+                      $('#calc_input_#{++index}').click(function({
+                        alert('北きた！');
+                      }));
       -# = paginate(@products)
       = render 'advertisement'
     =render 'footer'
