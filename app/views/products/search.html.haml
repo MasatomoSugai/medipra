@@ -42,7 +42,7 @@
                     
                     %span.samedrug_search
                       = link_to "同種薬検索", samedrugsearch_path(standard_code: product.standard_code, standard_name: product.standard_name),class:"samedrug_search__link"
-                  %td.results__table-row__price
+                  %td{class:"results__table-row__price_#{++index}"}
                     = (product.price).to_s(:delimited)
 
                   %td.results__table-row__standard
@@ -50,7 +50,8 @@
                   %td{class:"results__table-row__calc_#{++index}"}
                     %input{id:"calc_input_#{++index}",value: "1",maxlength:7, size:6}
                     = product.unit_name
-                    = (product.price).to_s(:delimited)
+                    %div{class:"calc_result_#{++index}"}
+                      = (product.price).to_s(:delimited)
                     円(税込み)
                     :javascript
                       $('#calc_input_#{++index}').click(function({
