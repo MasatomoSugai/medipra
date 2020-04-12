@@ -108,7 +108,7 @@
             &-title {
               height: 30px;
               &__name {
-                width: 50%;
+                width: 40%;
                 font-weight: bold;
                 background-color: #7fd9d2;
                 text-align: center;
@@ -120,9 +120,15 @@
                 text-align: center;
               }
               &__standard {
-                width: 35%;
+                width: 15%;
                 font-weight: bold;
                 background-color: #7fd9d2;
+                text-align: center;
+              }
+              &__calc {
+                width: 30%;
+                font-weight: bold;
+                background-color: #7fd9d277;
                 text-align: center;
               }
             }
@@ -168,11 +174,13 @@
               }
             }
             &__price {
-              min-width: 40px;
+            }
+            &__standard {
+              min-width: 60px;
               padding: 5px 5px;
               text-align: center;
             }
-            &__standard {
+            &__calc {
               min-width: 60px;
               padding: 5px 5px;
               text-align: center;
@@ -212,4 +220,15 @@
       }
     }
   }
+}
+
+td[class^="results__table-row__price_"]{
+  min-width: 40px;
+  padding: 5px 5px;
+  text-align: center;
+
+}
+
+div[class^="calc_result_"] {
+  display:inline;
 }
