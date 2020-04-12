@@ -224,3 +224,14 @@
     }
   }
 }
+
+td[class^="results__table-row__price_"]{
+  min-width: 40px;
+  padding: 5px 5px;
+  text-align: center;
+
+}
+
+div[class^="calc_result_"] {
+  display:inline;
+}
