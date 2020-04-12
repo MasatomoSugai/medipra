@@ -53,10 +53,6 @@
                     %div{class:"calc_result_#{++index}"}
                       = (product.price).to_s(:delimited)
                     円(税込み)
-                    :javascript
-                      $('#calc_input_#{++index}').click(function({
-                        alert('北きた！');
-                      }));
       -# = paginate(@products)
       = render 'advertisement'
     =render 'footer'
