@@ -42,7 +42,9 @@
                     %span.samedrug_search
                       = link_to "同種薬検索", samedrugsearch_path(standard_code: product.standard_code, standard_name: product.standard_name),class:"samedrug_search__link"
                   %td{class:"results__table-row__price_#{++index}"}
-                    = (product.price).to_s(:delimited)
+                    -# = (product.price).to_s(:delimited)
+                    = product.price
+
 
                   %td.results__table-row__standard
                     = product.unit_name
