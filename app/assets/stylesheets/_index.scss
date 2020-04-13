@@ -192,9 +192,18 @@
     .advertisement {
       text-align:center;
       margin-top:50px;
-      a {
-        
-      }
+        &__programing_school {
+          a {
+
+          }
+        }
+        &__job_offer {
+          margin-top:20px;
+          a {
+            
+          }
+        }
+
     }
     .footer {
       background-color: #009bc6;
