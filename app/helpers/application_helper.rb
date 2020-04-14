@@ -2,12 +2,12 @@ module ApplicationHelper
 
   def default_meta_tags
     {
-      site: '薬価検索サイトmedipra',
+      site: '薬価計算サイトmedipra',
       reverse: true,
       separator: '|',
       charset: 'utf-8',
-      description: 'おくすりの値段（薬価）が検索できるサービスです。AG（オーソライズドジェネリック）や同種薬の検索もできます。',
-      keywords: '薬価,おくすり,値段,オーソライズド,ジェネリック',
+      description: 'おくすりの値段（薬価）が検索・計算できるサービスです。AG（オーソライズドジェネリック）や同種薬の検索もできます。',
+      keywords: '薬価,計算,値段,オーソライズド,ジェネリック',
       canonical: request.original_url,
       og: defalut_og,
       twitter: default_twitter_card
