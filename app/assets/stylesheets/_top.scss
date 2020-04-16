@@ -2,6 +2,11 @@
   .default-container{
     .header {
       height: 100px;
+@mixin menu-list {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
     }
   }
 }
