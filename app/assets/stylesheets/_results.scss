@@ -1,0 +1,125 @@
+.results {
+  &__keyword {
+    font-size: 20px;
+    height: 30px;
+    padding: 5px 0;
+    margin-top: 20px;
+  }
+  &__no-match {
+    height: 200px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 50px;
+  }
+  &__total-count {
+    height: 30px;
+    font-size:20px;
+    padding: 0 0 5px 0;
+    margin: 10px 0;
+  }
+  &__table {
+    margin: 0 auto 20px;
+    &__container {
+      width: 90%;
+      margin: 0 auto;
+      &-title {
+        height: 30px;
+        &__name {
+          width: 40%;
+          font-weight: bold;
+          background-color: #7fd9d2;
+          text-align: center;
+        }
+        &__price {
+          width: 15%;
+          font-weight: bold;
+          background-color: #7fd9d277;
+          text-align: center;
+        }
+        &__standard {
+          width: 15%;
+          font-weight: bold;
+          background-color: #7fd9d2;
+          text-align: center;
+        }
+        &__calc {
+          width: 30%;
+          font-weight: bold;
+          background-color: #7fd9d277;
+          text-align: center;
+        }
+      }
+    }
+    &-row {
+      height: 30px;
+      &:nth-child(odd) {
+        background-color: #e6f0f0;
+    }
+      &__name {
+        min-width: 90px;
+        padding: 5px 5px;
+        font-weight: bold;
+        .generic {
+          font-weight: bold;
+          color: blue;
+          margin-right: 5px;
+        }
+        .AGgeneric {
+          font-weight: bold;
+          color: red;
+          margin-right: 5px;
+        }
+        .ingredients {
+          font-size: 12px;
+          font-weight: normal;
+        }
+        .samedrug_search {
+          display: inline-block;
+          width: 80px;
+          height: 20px;
+          text-align: center;
+          vertical-align: middle;
+          background-color:#7fd9d2;
+          border-radius: 5px;
+          line-height:20px;
+
+          &__link {
+            font-size: 12px;
+            text-decoration: none;
+            color: #ffffff;
+          }
+        }
+      }
+      &__price {
+      }
+      &__standard {
+        min-width: 60px;
+        padding: 5px 5px;
+        text-align: center;
+      }
+      &__calc {
+        min-width: 60px;
+        padding: 5px 5px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+td[class^="results__table-row__price_"]{
+  min-width: 40px;
+  padding: 5px 5px;
+  text-align: center;
+
+}
+
+div[class^="calc_result_"] {
+  display:inline;
+}
+
+@media screen and (max-width: 600px){
+
+
+  
+}

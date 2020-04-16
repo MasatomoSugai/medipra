@@ -1,0 +1,28 @@
+.footer {
+  background-color: #009bc6;
+  height: 150px;
+  position: abosolute;
+  bottom: 0;
+  margin-top: 20px;
+  &__container {
+    height: 100%;
+    position: relative;
+    &__title {
+      color: #ffffff;
+      font-size: 30px;
+      font-weight: bold;
+      padding: 30px 30px;
+    }
+    &__copyright {
+      margin: 0 0 10px 30px;
+      position: absolute;
+      bottom: 0;
+      color: #ffffff;
+    }
+  }
+}
+
+@media screen and (max-width:600px){
+  // width:100%;
+
+}
