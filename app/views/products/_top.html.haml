@@ -24,4 +24,16 @@
         %span
         %span
         %span
-        
+    %nav.header_button__menu
+      %ul.header_button__menu__menu-list
+        %li 
+          =link_to "HOME", root_path, class: "header_button__menu__menu-list_home"
+        %li 
+          =link_to "ABOUT US", about_medipra_path, class: "header_button__menu__menu-list_about"
+        %li 
+          =link_to "PRIVACY POLICY", privacy_policy_path, class: "header_button__menu__menu-list_privacy"
+        %li 
+          =link_to "CONTACT", contact_path, class: "header_button__menu__menu-list_contact"
+        %li
+          %p.header_button__menu__menu-list_close#menu_close CLOSE
+

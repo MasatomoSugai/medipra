@@ -68,21 +68,26 @@
           background-color: #fff;
           border:1px solid #fff;
           border-radius: 10px;
-          width: 30px;
-          height: 3px;
+          width: 25px;
+          height: 2px;
           position: absolute;
   
           &:nth-child(1){
-            top: 0px;
+            top: 2px;
           }
           &:nth-child(2){
-            top:12px;
+            top:10px;
           }
           &:nth-child(3){
-            top:24px;
+            top:18px;
           }
   
         }
+      }
+    }
+    &__menu {
+      &__menu-list {
+
       }
     }
     
@@ -111,13 +116,28 @@
       &__container {
         &__menu-list {
           li {
-          
           }
         }
       }
     }
     &_button {
       display:block;
+      &__container {
+      }
+      &__menu {
+        display:none;
+        background-color: #e6f0f0;
+        border-radius:5px;
+        box-shadow:0 0 3px 3px #8f8f8f;
+        height:200px;
+        width:220px;
+        position: absolute;
+        left:-164px;
+        top:-18px;
+
+        &__menu-list {
+          padding:10px 0 0 10px;
+          &_home {
             @include hamburger-menu-list;
           }
           &_about {
@@ -131,6 +151,9 @@
           }
           &_close {
             @include hamburger-menu-list;
+          }
+        }
+      }
     }
   }
 }
