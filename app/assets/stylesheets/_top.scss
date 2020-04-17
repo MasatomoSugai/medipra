@@ -33,16 +33,16 @@
         height: 40px;
         line-height: 40px;
         &_home {
-          @include menu-list
+          @include menu-list(#ffffff);
         }
         &_about {
-          @include menu-list
+          @include menu-list(#ffffff);
         }
         &_privacy {
-          @include menu-list
+          @include menu-list(#ffffff);
         }
         &_contact {
-          @include menu-list
+          @include menu-list(#ffffff);
         }
       }
     }
