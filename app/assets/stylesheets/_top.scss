@@ -4,6 +4,13 @@
   font-weight: bold;
 }
 
+@mixin hamburger-menu-list {
+  @include menu-list(#8f8f8f);
+  padding:3px 5px 10px 5px;
+  font-size:0.9rem;
+  display: block;
+}
+
 .header {
   position: relative;
   &_title {
@@ -111,6 +118,19 @@
     }
     &_button {
       display:block;
+            @include hamburger-menu-list;
+          }
+          &_about {
+            @include hamburger-menu-list;
+          }
+          &_privacy {
+            @include hamburger-menu-list;
+          }
+          &_contact {
+            @include hamburger-menu-list;
+          }
+          &_close {
+            @include hamburger-menu-list;
     }
   }
 }
