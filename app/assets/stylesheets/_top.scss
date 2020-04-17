@@ -1,6 +1,6 @@
-@mixin menu-list {
+@mixin menu-list($color) {
   text-decoration: none;
-  color: #ffffff;
+  color: $color;
   font-weight: bold;
 }
 
