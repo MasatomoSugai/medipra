@@ -1,3 +1,10 @@
+@mixin table-title($table-width, $table-color) {
+  width: $table-width;
+  font-weight: bold;
+  background-color: $table-color;
+  text-align: center;
+}
+
 .results {
   &__keyword {
     font-size: 20px;
@@ -26,28 +33,16 @@
       &-title {
         height: 30px;
         &__name {
-          width: 40%;
-          font-weight: bold;
-          background-color: #7fd9d2;
-          text-align: center;
+          @include table-title(40%, #7fd9d2);
         }
         &__price {
-          width: 15%;
-          font-weight: bold;
-          background-color: #7fd9d277;
-          text-align: center;
+          @include table-title(15%, #7fd9d277);
         }
         &__standard {
-          width: 15%;
-          font-weight: bold;
-          background-color: #7fd9d2;
-          text-align: center;
+          @include table-title(15%, #7fd9d2);
         }
         &__calc {
-          width: 30%;
-          font-weight: bold;
-          background-color: #7fd9d277;
-          text-align: center;
+          @include table-title(30%, #7fd9d277);
         }
       }
     }
