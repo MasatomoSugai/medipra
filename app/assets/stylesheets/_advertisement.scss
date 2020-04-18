@@ -15,7 +15,17 @@
 }
 
 @media screen and (max-width: 600px){
+  .advertisement {
+    &__programing_school {
+      font-size:0.9rem;
+      a {
 
+      }
+    }
+    &__job_offer {
+      font-size:0.9rem;
+    }
+  }
 
   
 }
