@@ -1,0 +1,22 @@
+.breadcrumb {
+  .breadcrumbs {
+    height: 35px;
+    line-height: 40px;
+    color: #8f8f8f;
+    padding-left:25px;
+    a {
+      text-decoration: none;
+      color: #8f8f8f;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .breadcrumb {
+    .breadcrumbs {
+      padding-left: 0px;
+      font-size:0.7rem;
+      // height: 20px;
+    }
+  }
+}

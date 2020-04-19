@@ -1,8 +1,10 @@
+= javascript_pack_tag 'hamburger-menu'
+
 .header
   %h1.header_title
-    = link_to "薬価検索サイトmedipra", root_path, class:"head-link"
+    = link_to "薬価計算medipra", root_path, class:"head-link"
   %p.header_text
-    お薬の値段（薬価）を調べることができます（更新：2020/04/01）
+    お薬の値段（薬価）を検索・計算することができます（更新：2020/04/01）
 
   .header_menu
     %nav.header_menu__container
@@ -16,4 +18,22 @@
         %li 
           =link_to "お問い合わせ", contact_path, class: "header_menu__container__menu-list_contact"
 
-          
+  .header_button
+    .header_button__container
+      .header_button__container__hamburger-menu
+        %span
+        %span
+        %span
+    %nav.header_button__menu
+      %ul.header_button__menu__menu-list
+        %li 
+          =link_to "HOME", root_path, class: "header_button__menu__menu-list_home"
+        %li 
+          =link_to "ABOUT US", about_medipra_path, class: "header_button__menu__menu-list_about"
+        %li 
+          =link_to "PRIVACY POLICY", privacy_policy_path, class: "header_button__menu__menu-list_privacy"
+        %li 
+          =link_to "CONTACT", contact_path, class: "header_button__menu__menu-list_contact"
+        %li
+          %p.header_button__menu__menu-list_close#menu_close CLOSE
+

@@ -1,7 +1,159 @@
-.wrapper {
-  .default-container{
-    .header {
-      height: 100px;
+@mixin menu-list($color) {
+  text-decoration: none;
+  color: $color;
+  font-weight: bold;
+}
+
+@mixin hamburger-menu-list {
+  @include menu-list(#8f8f8f);
+  padding:3px 5px 10px 5px;
+  font-size:0.9rem;
+  display: block;
+}
+
+.header {
+  position: relative;
+  &_title {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px 0 5px 30px;
+    .head-link {
+      color: #333;
+      text-decoration: none;
+    }
+  }
+  &_text {
+    padding: 5px 30px 10px 30px;
+    color: #8f8f8f;
+  }
+  &_menu {
+    background-color: #009bc6;
+    &__container {
+      width: 70%;
+      margin-left: 30px;
+      &__menu-list {
+        display: grid;
+        // メニューの数を増やしたら一つ増やす
+        grid-template-columns: 0.4fr 0.5fr 0.7fr 0.5fr;
+        text-align: center;
+        font-size: 20px;
+        height: 40px;
+        line-height: 40px;
+        &_home {
+          @include menu-list(#ffffff);
+        }
+        &_about {
+          @include menu-list(#ffffff);
+        }
+        &_privacy {
+          @include menu-list(#ffffff);
+        }
+        &_contact {
+          @include menu-list(#ffffff);
+        }
+      }
+    }
+  }
+  &_button {
+    height:40px;
+    width: 40px;
+    display:none;
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    &__container {
+      position: relative;
+      &__hamburger-menu {
+        span {
+          background-color: #fff;
+          border:1px solid #fff;
+          border-radius: 10px;
+          width: 25px;
+          height: 2px;
+          position: absolute;
+  
+          &:nth-child(1){
+            top: 2px;
+          }
+          &:nth-child(2){
+            top:10px;
+          }
+          &:nth-child(3){
+            top:18px;
+          }
+  
+        }
+      }
+    }
+    &__menu {
+      &__menu-list {
+
+      }
+    }
+    
+  }
+}
+
+@media screen and (max-width: 600px){
+  .header {
+    &_title {
+      padding: 10px 15px;
+      background-color: #009bc6;
+      .head-link {
+        font-size:1.3rem;
+        color: #fff;
+
+      } 
+    }
+    &_text {
+      font-size:0.7rem;
+      padding: 5px 20px 0px 20px;
+
+
+    }
+    &_menu {
+      display:none;
+      &__container {
+        &__menu-list {
+          li {
+          }
+        }
+      }
+    }
+    &_button {
+      display:block;
+      &__container {
+      }
+      &__menu {
+        display:none;
+        background-color: #e6f0f0;
+        border-radius:5px;
+        box-shadow:0 0 3px 3px #8f8f8f;
+        height:200px;
+        width:220px;
+        position: absolute;
+        left:-164px;
+        top:-18px;
+
+        &__menu-list {
+          padding:10px 0 0 10px;
+          &_home {
+            @include hamburger-menu-list;
+          }
+          &_about {
+            @include hamburger-menu-list;
+          }
+          &_privacy {
+            @include hamburger-menu-list;
+          }
+          &_contact {
+            @include hamburger-menu-list;
+          }
+          &_close {
+            @include hamburger-menu-list;
+          }
+        }
+      }
     }
   }
 }
