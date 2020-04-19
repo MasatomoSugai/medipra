@@ -50,7 +50,7 @@
       height: 30px;
       &:nth-child(odd) {
         background-color: #e6f0f0;
-    }
+      }
       &__name {
         min-width: 90px;
         padding: 5px 5px;
@@ -111,10 +111,135 @@ td[class^="results__table-row__price_"]{
 
 div[class^="calc_result_"] {
   display:inline;
+  &:before{
+    content: "→"
+  }
+}
+
+input[id^="calc_input_"] {
+  border:1px solid #b3b3b3;
+  border-radius:5px;
 }
 
 @media screen and (max-width: 600px){
+  .results {
+    &__keyword {
+      font-size: 1rem;
+      margin:0;
+    }
+    &__no-match {
+      font-size: 1rem;
+
+    }
+    &__total-count {
+      font-size: 1rem;
+      margin:0;
+
+    }
+    &__table {
+      &__container {
+        &-title {
+          display:flex;
+          flex-wrap: wrap;
+          height:120px;
+          padding:10px 10px;
+          border:1px solid #b3b3b3;
+          border-radius: 5px;
+          &__name {
+            @include table-title(100%, #7fd9d2);
+            margin:3px 3px;
+            line-height: 25px;
+          }
+          &__price {
+            @include table-title(47%, #7fd9d277);
+            margin:3px 3px;
+            line-height: 25px;
+
+          }
+          &__standard {
+            @include table-title(48%, #7fd9d2);
+            margin:3px 3px;
+            line-height: 25px;
+
+          }
+          &__calc {
+            @include table-title(100%, #7fd9d277);
+            margin:3px 3px;
+            line-height: 25px;
+
+          }
+        }
+      }
+      &-row {
+        display:flex;
+        flex-wrap: wrap;
+        height:130px;
+        padding:5px 5px;
+        border:1px solid #b3b3b3;
+        border-radius: 5px;
+        margin-top:7px;
+        &:nth-child(odd) {
+
+        }
+        &__name {
+          font-size: 0.9rem;
+          .generic {
+
+          }
+          .AGgeneric {
+
+          }
+          .ingredients {
+
+          }
+          .samedrug_search {
+            &__link {
+
+            }
+          }
+        }
+        &__price {
+          
+
+        }
+        &__standard {
+          font-size: 0.8rem;
+          &:before {
+            content:"/ 1 ";
+          }
+
+        }
+        &__calc {
+          font-size: 0.8rem;
+
+        }
+      }
+    }
+  }
+}
 
 
-  
+td[class^="results__table-row__price_"]{
+  min-width: 40px;
+  padding: 5px 5px;
+  text-align: center;
+  font-size: 0.8rem;
+  &:after {
+    content: "円"
+  }
+}
+
+div[class^="calc_result_"] {
+  display:inline;
+
+  &:before{
+    content: "→"
+  }
+}
+
+input[id^="calc_input_"] {
+  border:1px solid #b3b3b3;
+  border-radius:5px;
+  font-size: 0.8rem;
+
 }
