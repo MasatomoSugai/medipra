@@ -173,7 +173,7 @@ input[id^="calc_input_"] {
       &-row {
         display:flex;
         flex-wrap: wrap;
-        height:130px;
+        min-height:90px;
         padding:5px 5px;
         border:1px solid #b3b3b3;
         border-radius: 5px;
