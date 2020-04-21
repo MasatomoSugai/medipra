@@ -55,6 +55,12 @@
                       = (product.price * 1.1 - 0.5).ceil.to_s(:delimited)
                     円(税込み)
       -# = paginate(@products)
+      
+      %script{:async => "", :src => "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
+      %ins.adsbygoogle{"data-ad-client" => "ca-pub-3689967688572589", "data-ad-format" => "fluid", "data-ad-layout-key" => "-f9+5v+4m-d8+7b", "data-ad-slot" => "4241680225", :style => "display:block"}
+      :javascript
+        (adsbygoogle = window.adsbygoogle || []).push({});
+
       = render 'advertisement'
     =render 'footer'
 = javascript_pack_tag 'calculation'
