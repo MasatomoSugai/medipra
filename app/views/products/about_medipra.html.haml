@@ -6,6 +6,7 @@
     .body
       - breadcrumb :about_medipra
       = render 'breadcrumb'
+      = render 'pageup_btn'
       .message__container
         %h2.message__container__h2
           medipraについて
@@ -68,5 +69,6 @@
 
       
     =render 'footer'
+= javascript_pack_tag 'pageup_btn'
 
 
