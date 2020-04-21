@@ -6,8 +6,8 @@
     .body
       - breadcrumb :search
       = render 'breadcrumb'
-      =render 'search_form'
-
+      = render 'search_form'
+      = render 'pageup_btn'
       .results
         .results__keyword
           検索ワード ： #{params[:q][:standard_name_cont_all][0]} 
@@ -58,3 +58,4 @@
       = render 'advertisement'
     =render 'footer'
 = javascript_pack_tag 'calculation'
+= javascript_pack_tag 'pageup_btn'

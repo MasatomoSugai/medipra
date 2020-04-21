@@ -5,8 +5,9 @@
 
     .body
       - breadcrumb :samedrugsearch
-      =render 'breadcrumb'
-      =render 'search_form'
+      = render 'breadcrumb'
+      = render 'search_form'
+      = render 'pageup_btn'
 
       .results
         .results__keyword
@@ -53,4 +54,4 @@
       = render 'advertisement'
     =render 'footer'
 = javascript_pack_tag 'calculation'
-
+= javascript_pack_tag 'pageup_btn'
