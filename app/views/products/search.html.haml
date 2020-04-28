@@ -7,7 +7,7 @@
       - breadcrumb :search
       = render 'breadcrumb'
       = render 'search_form'
-      = render 'google_ads'
+      
       = render 'pageup_btn'
       .results
         .results__keyword
@@ -56,7 +56,7 @@
                       = (product.price * 1.1 - 0.5).ceil.to_s(:delimited)
                     円(税込み)
       -# = paginate(@products)
-      
+      = render 'google_ads'
     =render 'footer'
 = javascript_pack_tag 'calculation'
 = javascript_pack_tag 'pageup_btn'
