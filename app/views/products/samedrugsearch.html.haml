@@ -13,7 +13,7 @@
           #{params[:standard_name]}の同一規格、同一成分の薬一覧
         .results__total-count
           検索結果     #{@products.length}件
-        = render 'google_ads'
+        
         - if @products.empty?
           .results__no-match
             該当する薬品はありません。
