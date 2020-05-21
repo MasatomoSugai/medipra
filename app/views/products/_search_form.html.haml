@@ -3,7 +3,7 @@
     .search_form__container
       = f.label :name, "keyword", class:"search_form__container_keyword"
       .seach_form__container_box
-        = f.search_field :standard_name_cont_all, required: true, class:"search_form__container_box_box", placeholder:"例）「カロナ ２００」「レバミ オーツカ」"
+        = f.search_field :standard_name_cont_all, required: true, class:"search_form__container_box_box", placeholder:"全角で入力:例）「ゾルゲン」"
       -# = f.text_field ransack_param_translate_normal_or_key(:standard_name),value: ransack_params_array_to_s(ransack_param_translate_normal_or_key(:standard_name))
       -# = f.label :generic
       -# = f.radio_button :generic_or_original_eq, '', {:checked => true}
@@ -18,4 +18,4 @@
         = f.submit "検索", class:"search_form__container_button_button"
     %p
       全角で入力してください。製品名（商品名）で検索できます。キーワードを含む全ての商品が表示されます。
-    %p スペースを入れるとAND検索が可能です。
+    %p スペースを入れるとAND検索が可能です。規格やジェネリックメーカー名も一緒に検索できます。
