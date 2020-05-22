@@ -6,8 +6,8 @@ module ApplicationHelper
       reverse: true,
       separator: '|',
       charset: 'utf-8',
-      description: 'おくすりの値段（薬価）が検索・計算できるサービスです。AG（オーソライズドジェネリック）や同種薬の検索もできます。',
-      keywords: '薬価,計算,値段,オーソライズド,ジェネリック',
+      description: 'おくすりの値段（薬価）が検索でき、簡単に小分けの値段が計算できるサービスです。AG（オーソライズドジェネリック）や同種薬の検索もできます。',
+      keywords: 'メディプラ,薬価,計算,小分け,オーソライズド',
       canonical: request.original_url,
       og: defalut_og,
       twitter: default_twitter_card
