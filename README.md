@@ -81,10 +81,20 @@ https://shinryohoshu.mhlw.go.jp/shinryohoshu/downloadMenu/
 ### DBの更新方法
 
 医薬品マスターのCSVをダウンロードしてくる
+csvを5900行ずつ分割
+  ターミナルでファイルのあるディレクトリに移動
+  wc -l hogehoge.csv  => 行数の確認
+  split -l 5900 hogehoge.csv medipraOOOOOOO
 エクセルで開いて、「名前をつけて保存」→　保存形式をCSV UTF-8に指定して保存。（これで文字化けが解消される）
 medipra/dbに移動させる
+  mv medipra20201210ad ~/projects/medipra/db
 必要に応じてseeds/product~.rbを編集
 コマンドでDBにseedを流し込む
+  heroku login
+  heroku run bundle exec rake db:migrate:reset
+  heroku run bundle exec rake db:seed
+
+
 
 ### DB更新の課題
 年度途中の部分的な更新は、更新分だけをDBに追加すれば済む様子（20200520に初めて実施）
