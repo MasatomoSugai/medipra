@@ -92,8 +92,7 @@ medipra/dbに移動させる
 コマンドでDBにseedを流し込む
   heroku login
   heroku run bundle exec rake db:migrate:reset
-  heroku run bundle exec rake db:seed
-
+  heroku run bundle exec rake db:seed:product1
 
 
 ### DB更新の課題
