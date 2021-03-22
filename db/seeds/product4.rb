@@ -3,7 +3,7 @@ require "csv"
 date = "2020-04-01"
 i = 1
 
-CSV.foreach('db/medipra20201210ad.csv') do |info|
+CSV.foreach('db/medipra20210310ad.csv') do |info|
   Product.create!(
     price: info[11],
     change_category: info[0],
