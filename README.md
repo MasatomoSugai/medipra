@@ -89,6 +89,11 @@ csvを5900行ずつ分割
 medipra/dbに移動させる
   mv medipra20201210ad ~/projects/medipra/db
 必要に応じてseeds/product~.rbを編集
+トップ画面の更新日を更新
+更新履歴も変更
+masterにマージ
+(herokuに同期されるのを待つ)
+
 コマンドでDBにseedを流し込む
   heroku login
   heroku run bundle exec rake db:migrate:reset
