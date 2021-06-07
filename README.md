@@ -96,7 +96,7 @@ masterにマージ
 
 コマンドでDBにseedを流し込む
   heroku login
-  heroku run bundle exec rake db:migrate:reset
+  heroku run bundle exec rake db:migrate:reset  //たまにエラーが出て、DISABLE_DATABASE_ENVIRONMENT_CHECK=1をつけるように言われる
   heroku run bundle exec rake db:seed:product1
 
 
